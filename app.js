@@ -5,14 +5,12 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const app = express();
 
-// Kết nối MongoDB
 connectDB();
 
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Cấu hình session
 app.use(session({
     secret: 'my_secret_key',
     resave: false,
